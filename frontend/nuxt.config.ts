@@ -3,12 +3,12 @@ export default {
   head: {
     title: 'frontend',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'pt-BR'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'A tecnologia no processo de triagem' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
@@ -34,8 +34,13 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/style-resources'
   ],
+
+  styleResources: {scss: [
+    '@/components/bosons/*.scss'
+  ]},
 
   axios: {
     baseURL: process.env.NOV_ENV === 'production' ? '' : 'http://localhost:3333'
