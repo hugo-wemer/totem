@@ -12,6 +12,8 @@
     "lint": "npm run lint:js"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@nuxtjs/axios": "^5.13.6",
     "core-js": "^3.15.1",
     "normalize.css": "^8.0.1",
@@ -19,10 +21,13 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@nuxt/types": "^2.15.5",
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/eslint-config-typescript": "^6.0.1",
     "@nuxtjs/eslint-module": "^3.0.2",
+    "@nuxtjs/fontawesome": "^1.1.2",
     "@nuxtjs/style-resources": "^1.2.1",
     "eslint": "^7.29.0",
     "eslint-config-prettier": "^8.3.0",

@@ -12,7 +12,7 @@
     .pages-layout {
         margin-top: 3.313rem;
         display: grid;
-        grid-gap: 6.75rem;
+        grid-gap: 3.75rem;
         .container {
             padding-bottom: 6.75rem;
         }
