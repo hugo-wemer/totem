@@ -1,10 +1,16 @@
 <template>
   <div class="wrapper">
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
+    <h1>Home Page</h1>
   </div>
 </template>
+
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
+  layout: 'h_f'
+})
+</script>
 
 <style lang="scss" scoped>
 .wrapper {
