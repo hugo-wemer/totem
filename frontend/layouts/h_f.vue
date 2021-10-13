@@ -10,9 +10,9 @@
 
 <style lang="scss" scoped>
     .pages-layout {
-        margin-top: 3.313rem;
+        margin-top: 2.313rem;
         display: grid;
-        grid-gap: 6.75rem;
+        grid-gap: 3.75rem;
         .container {
             padding-bottom: 6.75rem;
         }
@@ -20,6 +20,7 @@
             position: absolute;
             bottom: 0;
             left: 0;
+            position: fixed;
         }
     }
 </style>

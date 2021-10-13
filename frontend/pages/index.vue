@@ -1,27 +1,15 @@
 <template>
-  <div class="wrapper">
-    <h1>Home Page</h1>
-  </div>
+  <HomeTemplate />
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import { patients } from '@/store'
 
 export default Vue.extend({
-  layout: 'h_f'
+  layout: 'h_f',
+  async asyncData() {
+    await patients.index()
+  }
 })
 </script>
-
-<style lang="scss" scoped>
-.wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 200px;
-  grid-auto-flow: column;
-  grid-gap: 0.5rem;
-  @include screen('small', 'medium'){grid-template-columns: 1fr;}
-  .box {
-    background-color: color('primary');
-  }
-}
-</style>

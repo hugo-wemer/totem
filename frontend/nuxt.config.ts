@@ -20,7 +20,7 @@ export default {
   css: ['normalize.css/normalize.css', '@/assets/scss/base.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
+  plugins: ['@/plugins/accessor'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -30,7 +30,19 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
+    '@nuxtjs/fontawesome',
   ],
+
+  fontawesome: {
+    component: 'fa',
+    icons: {
+      solid: [
+        'faSearch',
+        'faCheckDouble',
+        'faBook'
+      ],
+    }
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
