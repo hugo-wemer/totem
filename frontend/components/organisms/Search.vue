@@ -32,6 +32,7 @@
         background: color(primary, darkest);
         color: color(primary, lightest);
         margin-left: 2px;
+        cursor: pointer;
     }
     .icon {
         color: color(primary, lightest);
