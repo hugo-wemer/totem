@@ -16,19 +16,20 @@ export default class PostsController {
       'heart_rate',
       'fever',
       'headache',
-      'runny_nose'
+      'runny_nose',
+      'diagnostic'
     ])
     const post = await Post.create(data)
     return post
   }
 
   public async show({ params }: HttpContextContract) {
-    const post = await Post.findOrFail(params.slug)
+    const post = await Post.findOrFail(params.id)
     return post
   }
 
   public async update({ request, params }: HttpContextContract) {
-    const post = await Post.findOrFail(params.slug)
+    const post = await Post.findOrFail(params.id)
     const data = request.only(['transference'])
     post.merge(data)
     await post.save()
@@ -36,7 +37,7 @@ export default class PostsController {
   }
 
   public async destroy({ params }: HttpContextContract) {
-    const post = await Post.findOrFail(params.slug)
+    const post = await Post.findOrFail(params.id)
     await post.delete()
   }
 }

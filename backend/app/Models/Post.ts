@@ -17,8 +17,30 @@ export default class Post extends BaseModel {
   })
   public slug: string */
 
+  @computed()
+  public get date() {
+    const fulldate = this.updatedAt
+    const day = fulldate.day
+    const month = fulldate.month
+    const year = fulldate.year
+    const date = `${day}/${month}/${year}`
+    return date
+  }
+
+  @computed()
+  public get hour() {
+    const fulldate = this.updatedAt
+    const hour = fulldate.hour
+    const minute = fulldate.minute
+    const fullhour = `${hour}:${minute}`
+    return fullhour
+  }
+
   @column()
-  public transference: 'asynmptomatic' | 'synmptomatic' | 'not_tranfered_yet'
+  public diagnostic: 'asynmptomatic' | 'symptomatic'
+
+  @column()
+  public transference: 'not_tranfered_yet' | 'transfered'
 
   @column()
   public temperature: Float32Array
