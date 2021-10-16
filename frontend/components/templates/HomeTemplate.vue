@@ -5,7 +5,7 @@
                 <Search />
             </div>
             <div class="transfer">
-                <TransferButton />
+                <TransferButton @transfer="action"/>
             </div>    
         </div>
         <div class="undone-lists">
@@ -17,6 +17,24 @@
         </div>
   </div>
 </template>
+
+
+<script lang="ts">
+
+import Vue from 'vue'
+import TransferButton from '@/components/molecules/TransferButton.vue'
+import checkedIDs from '@/components/organisms/SymptomaticList.vue'
+
+export default Vue.extend({
+    
+components: { TransferButton },
+methods: {
+    action() {
+      console.log(checkedIDs)
+    }
+  }
+})
+</script>
 
 <style lang="scss" scoped>
 .list {background-color: red;}
@@ -33,7 +51,7 @@
 }
 .transfer {
     position: absolute;
-    left: 70vw;
+    left: 68.9vw;
     @include screen('small', 'medium'){
       display: grid;
       position: relative;
@@ -46,11 +64,13 @@
 }
 .undone-lists {
     display: grid;
+    //grid-gap: 140px;
     grid-template-columns: 1fr 1fr;
      @include screen('small', 'medium'){
       display: grid;
       grid-template-columns: 1fr;
       }
 }
+
 
 </style>

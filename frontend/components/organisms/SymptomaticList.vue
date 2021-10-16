@@ -7,38 +7,61 @@
       :patient="patient"
       class="container"
     >
-      <input type="checkbox" />
-        <span class="patient-name">
-          {{ patient.name }}
-        </span>
-        <NuxtLink :to="`/posts/${patient.id}`">
+      <input
+        :id="`${patient.id}`"
+        v-model="checkedIDs"
+        :value="`${patient.id}`"
+        type="checkbox"
+      />
+      <span class="patient-name">
+        {{ patient.name }}
+      </span>
+      <NuxtLink :to="`/posts/${patient.id}`">
         <fa class="icon" icon="book" />
       </NuxtLink>
     </label>
+
+    <h1>{{checkedIDs}}</h1>
   </div>
 </template>
 
 <script lang="ts">
-  import Vue, { PropOptions } from 'vue'
-  import { patients } from '@/store'
-  import { Patient } from '@/models'
+import Vue, { PropOptions } from 'vue'
+import { patients } from '@/store'
+import { Patient } from '@/models'
 
-  export default Vue.extend({
-    props: {
-      patient: {
-        type: Object,
-        required: true
-      } as PropOptions<Patient>
-    },
 
-    computed: {
-      $patients() {
-        const patientarray = patients.$all
-        const diagnostic =  patientarray.filter((symptom) => {return symptom.diagnostic === 'symptomatic'})
-        return diagnostic.filter((symptom) => {return symptom.transference === 'not_transfered_yet'})
-      }
+export default Vue.extend({
+
+  props: {
+    patient: {
+      type: Object,
+      required: true
+    } as PropOptions<Patient>,
+    
+  },
+
+  data() {
+    return {
+      checkedIDs: []
     }
-  })
+  },
+  
+
+  computed: {
+    $patients() {
+      const patientarray = patients.$all
+      const diagnostic = patientarray.filter((symptom) => {
+        return symptom.diagnostic === 'symptomatic'
+      })
+      return diagnostic.filter((symptom) => {
+        return symptom.transference === 'not_transfered_yet'
+      })
+    }
+  },
+
+
+})
 </script>
 
 <style lang="scss" scoped>
@@ -54,7 +77,6 @@
 
 .symptomatic-list {
   margin-top: 40px;
-  
 }
 .container {
   display: grid;
@@ -64,7 +86,7 @@
   align-items: center;
   margin-bottom: 10px;
   cursor: pointer;
-  @include screen('small', 'medium'){
+  @include screen('small', 'medium') {
     grid-template-columns: 20px 250px 30px;
     justify-content: center;
   }

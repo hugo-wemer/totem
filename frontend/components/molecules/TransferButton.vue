@@ -1,9 +1,30 @@
 <template>
     <div class="transfer-button">
         <fa class="icon" icon="check-double"/>
-        <button class="button" type="submit" formmethod="post">Transferir</button>
+        <button  class="button" type="submit" formmethod="post" @click="$emit('transfer')" >Transferir</button>
     </div>
 </template>
+
+<script lang="ts">
+
+import Vue from 'vue'
+export default Vue.extend({
+/* 
+    data(){
+        return{
+            transference: false
+        }
+    },
+
+    methods: {
+        transfer(){
+            console.log(this.transference)
+            this.transference = true
+            console.log(this.transference)
+        }
+    } */
+})
+</script>
 
 <style lang="scss" scoped>
     .transfer-button {
