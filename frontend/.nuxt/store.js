@@ -19,6 +19,7 @@ let store = {};
   // Enforce store modules
   store.modules = store.modules || {}
 
+  resolveStoreModules(require('../store/auth.ts'), 'auth.ts')
   resolveStoreModules(require('../store/patients.ts'), 'patients.ts')
 
   // If the environment supports hot reloading...
@@ -26,6 +27,7 @@ let store = {};
   if (process.client && module.hot) {
     // Whenever any Vuex module is updated...
     module.hot.accept([
+      '../store/auth.ts',
       '../store/index.ts',
       '../store/patients.ts',
     ], () => {

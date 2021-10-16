@@ -1,4 +1,19 @@
 {
+  "TransferButton": {
+    "description": "Auto imported from components/molecules/TransferButton.vue"
+  },
+  "HomeTemplate": {
+    "description": "Auto imported from components/templates/HomeTemplate.vue"
+  },
+  "Container": {
+    "description": "Auto imported from components/bosons/Container.vue"
+  },
+  "BaseButton": {
+    "description": "Auto imported from components/atoms/BaseButton.vue"
+  },
+  "BaseInput": {
+    "description": "Auto imported from components/atoms/BaseInput.vue"
+  },
   "Logo": {
     "description": "Auto imported from components/atoms/Logo.vue"
   },
@@ -22,14 +37,5 @@
   },
   "Transfereds": {
     "description": "Auto imported from components/organisms/Transfereds.vue"
-  },
-  "HomeTemplate": {
-    "description": "Auto imported from components/templates/HomeTemplate.vue"
-  },
-  "Container": {
-    "description": "Auto imported from components/bosons/Container.vue"
-  },
-  "TransferButton": {
-    "description": "Auto imported from components/molecules/TransferButton.vue"
   }
 }

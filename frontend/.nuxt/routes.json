@@ -1,5 +1,12 @@
 [
   {
+    "name": "Login",
+    "path": "/Login",
+    "component": "/home/hugo/Desktop/TCC/totem/frontend/pages/Login.vue",
+    "chunkName": "pages/Login",
+    "_name": "_e7c7ce10"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/home/hugo/Desktop/TCC/totem/frontend/pages/index.vue",

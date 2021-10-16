@@ -14,6 +14,7 @@ import { createStore } from './store.js'
 /* Plugins */
 
 import nuxt_plugin_plugin_68f1dbe7 from 'nuxt_plugin_plugin_68f1dbe7' // Source: ./components/plugin.js (mode: 'all')
+import nuxt_plugin_cookieuniversalnuxt_eb7b21b6 from 'nuxt_plugin_cookieuniversalnuxt_eb7b21b6' // Source: ./cookie-universal-nuxt.js (mode: 'all')
 import nuxt_plugin_axios_8f6d2d06 from 'nuxt_plugin_axios_8f6d2d06' // Source: ./axios.js (mode: 'all')
 import nuxt_plugin_fontawesome_67112a02 from 'nuxt_plugin_fontawesome_67112a02' // Source: ./fontawesome.js (mode: 'all')
 import nuxt_plugin_accessor_505b078a from 'nuxt_plugin_accessor_505b078a' // Source: ../plugins/accessor (mode: 'all')
@@ -215,6 +216,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_plugin_68f1dbe7 === 'function') {
     await nuxt_plugin_plugin_68f1dbe7(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_cookieuniversalnuxt_eb7b21b6 === 'function') {
+    await nuxt_plugin_cookieuniversalnuxt_eb7b21b6(app.context, inject)
   }
 
   if (typeof nuxt_plugin_axios_8f6d2d06 === 'function') {
