@@ -1,0 +1,35 @@
+{
+  "Logo": {
+    "description": "Auto imported from components/atoms/Logo.vue"
+  },
+  "SearchIcon": {
+    "description": "Auto imported from components/atoms/SearchIcon.vue"
+  },
+  "AsymptomaticList": {
+    "description": "Auto imported from components/organisms/AsymptomaticList.vue"
+  },
+  "Footer": {
+    "description": "Auto imported from components/organisms/Footer.vue"
+  },
+  "Header": {
+    "description": "Auto imported from components/organisms/Header.vue"
+  },
+  "Search": {
+    "description": "Auto imported from components/organisms/Search.vue"
+  },
+  "SymptomaticList": {
+    "description": "Auto imported from components/organisms/SymptomaticList.vue"
+  },
+  "Transfereds": {
+    "description": "Auto imported from components/organisms/Transfereds.vue"
+  },
+  "HomeTemplate": {
+    "description": "Auto imported from components/templates/HomeTemplate.vue"
+  },
+  "Container": {
+    "description": "Auto imported from components/bosons/Container.vue"
+  },
+  "TransferButton": {
+    "description": "Auto imported from components/molecules/TransferButton.vue"
+  }
+}
