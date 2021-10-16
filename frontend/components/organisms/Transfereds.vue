@@ -14,24 +14,38 @@
       </NuxtLink>
       <span class="date">{{ patient.date }}</span>
       <span class="hour">{{ patient.hour }}</span>
-      <div v-if="patient.diagnostic === 'symptomatic'" :class="{ covid: patient.diagnostic === 'symptomatic' }"></div>
-      <div v-if="patient.diagnostic === 'asymptomatic'"  :class="{ notCovid: patient.diagnostic === 'asymptomatic' }"></div>
+      <div
+        v-if="patient.diagnostic === 'symptomatic'"
+        :class="{ covid: patient.diagnostic === 'symptomatic' }"
+      ></div>
+      <div
+        v-if="patient.diagnostic === 'asymptomatic'"
+        :class="{ notCovid: patient.diagnostic === 'asymptomatic' }"
+      ></div>
     </label>
+    <h1>{{checkedIDs}}</h1>
   </div>
 </template>
 
 <script lang="ts">
+
 import Vue, { PropOptions } from 'vue'
+
 import { patients } from '@/store'
 import { Patient } from '@/models'
 
+
+
 export default Vue.extend({
+
   props: {
     patient: {
       type: Object,
       required: true
-    } as PropOptions<Patient>
+    } as PropOptions<Patient>,
   },
+
+ 
 
   computed: {
     $patients() {
@@ -45,7 +59,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.list-indication{
+.list-indication {
   display: grid;
   color: color(primary);
   font-size: 12pt;
@@ -65,8 +79,6 @@ export default Vue.extend({
 }
 .transfereds {
   margin-top: 50px;
-  
-  
 }
 .container {
   display: grid;
@@ -85,7 +97,7 @@ export default Vue.extend({
   color: color(primary, darkest);
   height: 20px;
   align-content: center;
-  width: 38rem;
+  width: auto; //38rem;
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
@@ -122,7 +134,6 @@ export default Vue.extend({
   border-radius: 5px;
   @include screen('small', 'medium') {
     display: none;
-    
   }
 }
 </style>

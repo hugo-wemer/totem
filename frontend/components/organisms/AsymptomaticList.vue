@@ -20,28 +20,35 @@
 </template>
 
 <script lang="ts">
-  import Vue, { PropOptions } from 'vue'
-  import { patients } from '@/store'
-  import { Patient } from '@/models'
+import Vue, { PropOptions } from 'vue'
+import { patients } from '@/store'
+import { Patient } from '@/models'
 
-  export default Vue.extend({
-    props: {
-      patient: {
-        type: Object,
-        required: true
-      } as PropOptions<Patient>
-    },
 
-    computed: {
-      $patients() {
-        const patientarray = patients.$all
-        const diagnostic =  patientarray.filter((symptom) => {return symptom.diagnostic === 'asymptomatic'})
-        return diagnostic.filter((symptom) => {return symptom.transference === 'not_transfered_yet'})
-        
-      }
+export default Vue.extend({
+  
+  props: {
+    patient: {
+      type: Object,
+      required: true
+    } as PropOptions<Patient>
+  },
+
+  computed: {
+    $patients() {
+      const patientarray = patients.$all
+      const diagnostic = patientarray.filter((symptom) => {
+        return symptom.diagnostic === 'asymptomatic'
+      })
+      return diagnostic.filter((symptom) => {
+        return symptom.transference === 'not_transfered_yet'
+      })
     }
-  })
+  }
+})
 </script>
+
+
 
 <style lang="scss" scoped>
 .icon {
@@ -52,12 +59,15 @@
   color: color(primary);
   font-size: 12pt;
   margin-bottom: 10px;
-  
 }
 .asymptomatic-list {
   //display: grid;
   margin-top: 40px;
+  margin-left: auto;
   justify-content: right;
+  @include screen('small', 'medium') {
+    margin-left: 0px;
+  }
 }
 .container {
   display: grid;
@@ -67,8 +77,8 @@
   align-items: center;
   margin-bottom: 10px;
   cursor: pointer;
-  
-  @include screen('small', 'medium'){
+
+  @include screen('small', 'medium') {
     grid-template-columns: 20px 250px 30px;
     justify-content: center;
   }
