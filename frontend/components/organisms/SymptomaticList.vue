@@ -21,7 +21,7 @@
       </NuxtLink>
     </label>
 
-    <h1>{{checkedIDs}}</h1>
+    <!-- <h1>{{checkedIDs}}</h1> -->
   </div>
 </template>
 

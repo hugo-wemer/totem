@@ -56,8 +56,11 @@ export default {
     '@/components/bosons/*.scss'
   ]},
 
+  /* axios: {
+    baseURL: process.env.NOV_ENV === 'production' ? 'https://adonis-backend-tcc.herokuapp.com/' : 'http://localhost:3333'
+  }, */
   axios: {
-    baseURL: process.env.NOV_ENV === 'production' ? '' : 'http://localhost:3333'
+    baseURL: 'https://adonis-backend-tcc.herokuapp.com'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

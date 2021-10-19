@@ -1,10 +1,4 @@
 {
-  "TransferButton": {
-    "description": "Auto imported from components/molecules/TransferButton.vue"
-  },
-  "HomeTemplate": {
-    "description": "Auto imported from components/templates/HomeTemplate.vue"
-  },
   "Container": {
     "description": "Auto imported from components/bosons/Container.vue"
   },
@@ -37,5 +31,11 @@
   },
   "Transfereds": {
     "description": "Auto imported from components/organisms/Transfereds.vue"
+  },
+  "HomeTemplate": {
+    "description": "Auto imported from components/templates/HomeTemplate.vue"
+  },
+  "TransferButton": {
+    "description": "Auto imported from components/molecules/TransferButton.vue"
   }
 }
