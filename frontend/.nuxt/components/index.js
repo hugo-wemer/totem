@@ -1,5 +1,3 @@
-export { default as TransferButton } from '../../components/molecules/TransferButton.vue'
-export { default as HomeTemplate } from '../../components/templates/HomeTemplate.vue'
 export { default as Container } from '../../components/bosons/Container.vue'
 export { default as BaseButton } from '../../components/atoms/BaseButton.vue'
 export { default as BaseInput } from '../../components/atoms/BaseInput.vue'
@@ -11,6 +9,8 @@ export { default as Header } from '../../components/organisms/Header.vue'
 export { default as Search } from '../../components/organisms/Search.vue'
 export { default as SymptomaticList } from '../../components/organisms/SymptomaticList.vue'
 export { default as Transfereds } from '../../components/organisms/Transfereds.vue'
+export { default as HomeTemplate } from '../../components/templates/HomeTemplate.vue'
+export { default as TransferButton } from '../../components/molecules/TransferButton.vue'
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {
