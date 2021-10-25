@@ -6,11 +6,11 @@ You can directly use them in pages and other components without the need to impo
 
 **Tip:** If a component is conditionally rendered with `v-if` and is big, it is better to use `Lazy` or `lazy-` prefix to lazy load.
 
-- `<Container>` | `<container>` (components/bosons/Container.vue)
 - `<BaseButton>` | `<base-button>` (components/atoms/BaseButton.vue)
 - `<BaseInput>` | `<base-input>` (components/atoms/BaseInput.vue)
 - `<Logo>` | `<logo>` (components/atoms/Logo.vue)
 - `<SearchIcon>` | `<search-icon>` (components/atoms/SearchIcon.vue)
+- `<Container>` | `<container>` (components/bosons/Container.vue)
 - `<AsymptomaticList>` | `<asymptomatic-list>` (components/organisms/AsymptomaticList.vue)
 - `<Footer>` | `<footer>` (components/organisms/Footer.vue)
 - `<Header>` | `<header>` (components/organisms/Header.vue)

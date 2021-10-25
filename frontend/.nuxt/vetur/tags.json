@@ -1,7 +1,4 @@
 {
-  "Container": {
-    "description": "Auto imported from components/bosons/Container.vue"
-  },
   "BaseButton": {
     "description": "Auto imported from components/atoms/BaseButton.vue"
   },
@@ -13,6 +10,9 @@
   },
   "SearchIcon": {
     "description": "Auto imported from components/atoms/SearchIcon.vue"
+  },
+  "Container": {
+    "description": "Auto imported from components/bosons/Container.vue"
   },
   "AsymptomaticList": {
     "description": "Auto imported from components/organisms/AsymptomaticList.vue"
