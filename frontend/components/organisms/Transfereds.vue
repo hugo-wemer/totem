@@ -23,7 +23,6 @@
         :class="{ notCovid: patient.diagnostic === 'asymptomatic' }"
       ></div>
     </label>
-    <h1>{{ checkedIDs }}</h1>
   </div>
 </template>
 
@@ -38,7 +37,11 @@ export default Vue.extend({
     patient: {
       type: Object,
       required: true
-    } as PropOptions<Patient>
+    } as PropOptions<Patient>,
+    checkedIDs: {
+      type: Object,
+      required: true
+    } as PropOptions<Patient>,
   },
 
   computed: {

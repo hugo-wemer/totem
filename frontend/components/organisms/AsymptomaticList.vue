@@ -26,7 +26,6 @@ import { Patient } from '@/models'
 
 
 export default Vue.extend({
-  
   props: {
     patient: {
       type: Object,

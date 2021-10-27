@@ -61,7 +61,6 @@ export default {
   }, */
   axios: {
     baseURL: 'https://adonis-backend-tcc.herokuapp.com'
-    /* baseURL: 'http://127.0.0.1:3333' */
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

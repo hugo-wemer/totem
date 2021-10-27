@@ -12,6 +12,7 @@
         v-model="checkedIDs"
         :value="`${patient.id}`"
         type="checkbox"
+        @change="$emit('transferedSymp', checkedIDs)"
       />
       <span class="patient-name">
         {{ patient.name }}
@@ -20,8 +21,6 @@
         <fa class="icon" icon="book" />
       </NuxtLink>
     </label>
-
-    <!-- <h1>{{checkedIDs}}</h1> -->
   </div>
 </template>
 
@@ -32,22 +31,17 @@ import { Patient } from '@/models'
 
 
 export default Vue.extend({
-
   props: {
     patient: {
       type: Object,
       required: true
-    } as PropOptions<Patient>,
-    
+    } as PropOptions<Patient>
   },
-
   data() {
     return {
       checkedIDs: []
     }
   },
-  
-
   computed: {
     $patients() {
       const patientarray = patients.$all
@@ -57,7 +51,7 @@ export default Vue.extend({
       return diagnostic.filter((symptom) => {
         return symptom.transference === 'not_transfered_yet'
       })
-    }
+    },
   },
 })
 </script>
