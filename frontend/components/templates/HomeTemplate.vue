@@ -5,12 +5,12 @@
         <Search />
       </div>
       <div class="transfer">
-        <TransferButton @transfer="transfer($event)"/>
+        <TransferButton @transfer="transfer($event)" />
       </div>
     </div>
     <div class="undone-lists">
-      <SymptomaticList @transferedSymp="transferedSymp($event)"/>
-      <AsymptomaticList />
+      <SymptomaticList @transferedSymp="transferedSymp($event)" />
+      <AsymptomaticList @transferedAsymp="transferedAsymp($event)"/>
     </div>
     <div class="done-list">
       <Transfereds />
@@ -21,29 +21,36 @@
 <script lang="ts">
 import Vue from 'vue'
 import TransferButton from '@/components/molecules/TransferButton.vue'
+import { transfer } from '@/store'
 
 export default Vue.extend({
   components: { TransferButton },
 
-  data(){
+  data() {
     return {
-      transferedUsersVal: []
+      transferedUsersValSym: [],
+      transferedUsersValAsym: []
     }
   },
-  methods:{
-    transferedSymp(event: []){
-      const transferUsers = event
-      /* console.log(transferUsers) */
-      this.transferedUsersVal = transferUsers
+  methods: {
+    transferedSymp(event: []) {
+      const transferUsersSym = event
+      this.transferedUsersValSym = transferUsersSym
     },
-    transfer(event: boolean){
-      /* const teste = this.transferedSymp(transferUsers) */
-      const transference = event
-      console.log(this.transferedUsersVal)
-      return transference
+    transferedAsymp(event: []) {
+      const transferUsersAsym = event
+      this.transferedUsersValAsym = transferUsersAsym
     },
-  },
-
+    async transfer(event: boolean) {
+      const transferenceST = event
+      await transfer.update({
+        transference: 'transfered',
+        idsSym: this.transferedUsersValSym,
+        idsAsym: this.transferedUsersValAsym
+      })
+      return transferenceST
+    }
+  }
 })
 </script>
 

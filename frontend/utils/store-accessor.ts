@@ -1,22 +1,19 @@
+/* eslint-disable import/no-mutable-exports */
 import { Store } from 'vuex'
 import { getModule } from 'vuex-module-decorators'
 
 import Patients from '@/store/patients'
 import Auth from '@/store/auth'
+import Transfer from '@/store/transfer'
 
-
-// eslint-disable-next-line import/no-mutable-exports
 let patients: Patients
-// eslint-disable-next-line import/no-mutable-exports
 let auth: Auth
+let transfer: Transfer
 
-/* function initializeStores(store: Store<any>): void {
-  patients = getModule(Patients, store)
-  auth = getModule(Auth, store)
-} */
 const initializeStores = (store: Store<any>): void => {
   patients = getModule(Patients, store)
   auth = getModule(Auth, store)
+  transfer = getModule(Transfer, store)
 }
 
-export { initializeStores, patients, auth }
+export { initializeStores, patients, auth, transfer }

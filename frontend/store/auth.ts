@@ -6,6 +6,10 @@ interface CreatePayload {
   password: string
 }
 
+interface UpdatePayload{
+  token?: string
+}
+
 type Token = string | null
 
 @Module({ name: 'auth', stateFactory: true, namespaced: true })
@@ -36,9 +40,13 @@ export default class Auth extends VuexModule {
   @Action
   async destroy() {
     await $axios.delete('/auth')
-
     $cookies.remove('token')
-
     this.context.commit('UPDATE_TOKEN', null)
+  }
+
+  @Action
+  public update(payload: UpdatePayload) {
+    const  token  = payload?.token ? payload.token : $cookies.get('token')
+    this.context.commit('UPDATE_TOKEN', token || null)
   }
 }

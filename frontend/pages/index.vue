@@ -8,6 +8,7 @@ import { patients } from '@/store'
 
 export default Vue.extend({
   layout: 'h_f',
+  middleware: 'auth',
   async asyncData() {
     await patients.index()
   },
