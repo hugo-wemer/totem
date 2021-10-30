@@ -7,7 +7,13 @@
       :patient="patient"
       class="container"
     >
-      <input type="checkbox" />
+      <input
+        :id="`${patient.id}`"
+        v-model="checkedIDs"
+        :value="`${patient.id}`"
+        type="checkbox"
+        @change="$emit('transferedAsymp', checkedIDs)"
+      />
       <span class="patient-name">
         {{ patient.name }}
       </span>
@@ -24,7 +30,6 @@ import Vue, { PropOptions } from 'vue'
 import { patients } from '@/store'
 import { Patient } from '@/models'
 
-
 export default Vue.extend({
   props: {
     patient: {
@@ -32,7 +37,11 @@ export default Vue.extend({
       required: true
     } as PropOptions<Patient>
   },
-
+  data() {
+    return {
+      checkedIDs: []
+    }
+  },
   computed: {
     $patients() {
       const patientarray = patients.$all
@@ -46,8 +55,6 @@ export default Vue.extend({
   }
 })
 </script>
-
-
 
 <style lang="scss" scoped>
 .icon {

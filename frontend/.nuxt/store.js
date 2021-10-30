@@ -21,6 +21,7 @@ let store = {};
 
   resolveStoreModules(require('../store/auth.ts'), 'auth.ts')
   resolveStoreModules(require('../store/patients.ts'), 'patients.ts')
+  resolveStoreModules(require('../store/transfer.ts'), 'transfer.ts')
 
   // If the environment supports hot reloading...
 
@@ -30,6 +31,7 @@ let store = {};
       '../store/auth.ts',
       '../store/index.ts',
       '../store/patients.ts',
+      '../store/transfer.ts',
     ], () => {
       // Update `root.modules` with the latest definitions.
       updateModules()

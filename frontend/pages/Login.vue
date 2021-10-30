@@ -24,6 +24,7 @@ import Vue from 'vue'
 import { auth } from '@/store'
 
 export default Vue.extend({
+  middleware: 'guest',
   data() {
     return {
       username: '',
