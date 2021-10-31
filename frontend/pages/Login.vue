@@ -1,22 +1,28 @@
 <template>
-  <form @submit.prevent="onSubmit">
-    <div class="fom-field">
-      <BaseInput
-        v-model="username"
-        type="username"
-        placeholder="Digite seu usuário"
-      />
-    </div>
-    <div class="fom-field">
-      <BaseInput
-        v-model="password"
-        type="password"
-        placeholder="Digite sua senha"
-      />
-    </div>
-    <BaseButton text="Entrar"></BaseButton>
-    <p>{{teste}}</p>
-  </form>
+<div class="form">
+    <form @submit.prevent="onSubmit">
+      <div class="fom-field">
+        <BaseInput
+          v-model="username"
+          class="inputs"
+          type="username"
+          placeholder="Digite seu usuário"
+        />
+      </div>
+      <div class="fom-field">
+        <BaseInput
+          v-model="password"
+          class="inputs"
+          type="password"
+          placeholder="Digite sua senha"
+        />
+      </div>
+      <BaseButton class="button" text="Entrar"></BaseButton>
+     <clientOnly>
+        <notifications position="bottom center" classes="notifications" :max="1" />
+    </clientOnly>
+    </form>
+  </div>
 </template>
 
 <script lang="ts">
@@ -39,9 +45,17 @@ export default Vue.extend({
           username: this.username,
           password: this.password
         })
-        this.$router.push('/')
+        this.$notify({
+          type: 'success',
+          text: 'Sucesso! Você será redirecionado.'
+        })
+        setTimeout(() => this.$router.push('/'), 2000)
+        /* this.$router.push('/') */
       } catch {
-        this.teste = "CatchError"
+        this.$notify({
+          type: 'error',
+          text: 'Login Incorreto'
+        })
       }
     }
   }
@@ -65,4 +79,28 @@ form {
     color: white;
   }
 }
+.form{
+  background-color: color(primary, darkest);
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: -174.400px;
+  position: fixed;
+  width: 100vw;
+
+}
+.inputs{
+  border-radius: 10px;
+}
+.button{
+  border-radius: 10px;
+  height: 30px;
+  cursor: pointer;
+  background-color: color(primary, lightest);
+}
+.button:hover{
+  background-color: color(success);
+}
+
 </style>

@@ -16,6 +16,6 @@ You can directly use them in pages and other components without the need to impo
 - `<Search>` | `<search>` (components/organisms/Search.vue)
 - `<SymptomaticList>` | `<symptomatic-list>` (components/organisms/SymptomaticList.vue)
 - `<Transfereds>` | `<transfereds>` (components/organisms/Transfereds.vue)
-- `<Container>` | `<container>` (components/bosons/Container.vue)
 - `<HomeTemplate>` | `<home-template>` (components/templates/HomeTemplate.vue)
+- `<Container>` | `<container>` (components/bosons/Container.vue)
 - `<TransferButton>` | `<transfer-button>` (components/molecules/TransferButton.vue)
