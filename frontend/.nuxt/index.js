@@ -18,6 +18,7 @@ import nuxt_plugin_cookieuniversalnuxt_eb7b21b6 from 'nuxt_plugin_cookieuniversa
 import nuxt_plugin_axios_8f6d2d06 from 'nuxt_plugin_axios_8f6d2d06' // Source: ./axios.js (mode: 'all')
 import nuxt_plugin_fontawesome_67112a02 from 'nuxt_plugin_fontawesome_67112a02' // Source: ./fontawesome.js (mode: 'all')
 import nuxt_plugin_accessor_505b078a from 'nuxt_plugin_accessor_505b078a' // Source: ../plugins/accessor (mode: 'all')
+import nuxt_plugin_notifications_79c86385 from 'nuxt_plugin_notifications_79c86385' // Source: ../plugins/notifications.client (mode: 'client')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -232,6 +233,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_accessor_505b078a === 'function') {
     await nuxt_plugin_accessor_505b078a(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_notifications_79c86385 === 'function') {
+    await nuxt_plugin_notifications_79c86385(app.context, inject)
   }
 
   // Lock enablePreview in context
