@@ -41,7 +41,8 @@ export default {
       solid: [
         'faSearch',
         'faCheckDouble',
-        'faBook'
+        'faBook',
+        'faTrash'
       ],
     }
   },

@@ -9,13 +9,15 @@ import {
 import {
   faSearch as freeFasFaSearch,
   faCheckDouble as freeFasFaCheckDouble,
-  faBook as freeFasFaBook
+  faBook as freeFasFaBook,
+  faTrash as freeFasFaTrash
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
   freeFasFaSearch,
   freeFasFaCheckDouble,
-  freeFasFaBook
+  freeFasFaBook,
+  freeFasFaTrash
 )
 
 config.autoAddCss = false

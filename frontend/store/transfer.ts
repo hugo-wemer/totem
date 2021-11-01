@@ -1,12 +1,16 @@
 import { Module, VuexModule, Action } from 'vuex-module-decorators'
+import { Patient } from '@/models'
 import { $axios, $cookies } from '@/utils/nuxt-instance'
-// import { Patient } from '@/models'
 
 interface UpdatePayload {
   transference: string
   idsSym: any
   idsAsym: any
 }
+interface Show {
+  id: number
+}
+
 
 @Module({ name: 'transfer', stateFactory: true, namespaced: true })
 export default class Transfer extends VuexModule {
@@ -15,18 +19,24 @@ export default class Transfer extends VuexModule {
     const token = $cookies.get('token')
     await $axios.setToken(token, 'Bearer')
     const arraySym = payload.idsSym
-    for(let i = 0; i<arraySym.length; i++){
+    for (let i = 0; i < arraySym.length; i++) {
       const id = payload.idsSym[i]
       const route = `/posts/${id}`
       await $axios.$put(route, payload)
     }
     const arrayAsym = payload.idsAsym
-    for(let i = 0; i<arrayAsym.length; i++){
+    for (let i = 0; i < arrayAsym.length; i++) {
       const id = payload.idsAsym[i]
       const route = `/posts/${id}`
       await $axios.$put(route, payload)
     }
     location.reload()
-     /* setTimeout(() => location.reload(), 1000) */
+  }
+
+  @Action
+  public async reupdate({id}: Show) {
+    const token = $cookies.get('token')
+    await $axios.setToken(token, 'Bearer')
+    await $axios.$put(`/posts/${id}`, { transference: 'not_transfered_yet' })
   }
 }
