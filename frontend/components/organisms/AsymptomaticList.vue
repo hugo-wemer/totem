@@ -18,7 +18,7 @@
         {{ patient.name }}
       </span>
 
-      <NuxtLink :to="`/posts/${patient.id}`">
+      <NuxtLink :to="`/patient/${patient.id}`">
         <fa class="icon" icon="book" />
       </NuxtLink>
     </label>

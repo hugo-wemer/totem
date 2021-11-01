@@ -11,6 +11,15 @@
   "SearchIcon": {
     "description": "Auto imported from components/atoms/SearchIcon.vue"
   },
+  "Container": {
+    "description": "Auto imported from components/bosons/Container.vue"
+  },
+  "PatientImage": {
+    "description": "Auto imported from components/molecules/PatientImage.vue"
+  },
+  "TransferButton": {
+    "description": "Auto imported from components/molecules/TransferButton.vue"
+  },
   "AsymptomaticList": {
     "description": "Auto imported from components/organisms/AsymptomaticList.vue"
   },
@@ -19,6 +28,15 @@
   },
   "Header": {
     "description": "Auto imported from components/organisms/Header.vue"
+  },
+  "Measurement": {
+    "description": "Auto imported from components/organisms/Measurement.vue"
+  },
+  "PrimaryInfo": {
+    "description": "Auto imported from components/organisms/PrimaryInfo.vue"
+  },
+  "Quiz": {
+    "description": "Auto imported from components/organisms/Quiz.vue"
   },
   "Search": {
     "description": "Auto imported from components/organisms/Search.vue"
@@ -32,10 +50,7 @@
   "HomeTemplate": {
     "description": "Auto imported from components/templates/HomeTemplate.vue"
   },
-  "Container": {
-    "description": "Auto imported from components/bosons/Container.vue"
-  },
-  "TransferButton": {
-    "description": "Auto imported from components/molecules/TransferButton.vue"
+  "PatientDetailsTemplate": {
+    "description": "Auto imported from components/templates/PatientDetailsTemplate.vue"
   }
 }

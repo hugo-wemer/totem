@@ -7,7 +7,7 @@
       :patient="patient"
       class="container"
     >
-      <NuxtLink :to="`/posts/${patient.id}`">
+      <NuxtLink :to="`/patient/${patient.id}`">
         <span class="patient-name">
           {{ patient.name }}
         </span>

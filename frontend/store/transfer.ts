@@ -26,6 +26,7 @@ export default class Transfer extends VuexModule {
       const route = `/posts/${id}`
       await $axios.$put(route, payload)
     }
-     location.reload()
+    location.reload()
+     /* setTimeout(() => location.reload(), 1000) */
   }
 }
