@@ -11,7 +11,7 @@
                     <NuxtLink to="/">Início</NuxtLink>
                 </li>
                 <li class="item">
-                    <NuxtLink to="/transferidos">Transferidos</NuxtLink>
+                    <NuxtLink to="/transfereds">Transferidos</NuxtLink>
                 </li>
             </ul>
         </nav>

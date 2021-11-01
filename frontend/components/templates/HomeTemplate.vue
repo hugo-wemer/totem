@@ -10,11 +10,18 @@
     </div>
     <div class="undone-lists">
       <SymptomaticList @transferedSymp="transferedSymp($event)" />
-      <AsymptomaticList @transferedAsymp="transferedAsymp($event)"/>
+      <AsymptomaticList @transferedAsymp="transferedAsymp($event)" />
     </div>
     <div class="done-list">
       <Transfereds />
     </div>
+    <clientOnly>
+      <notifications
+        position="bottom center"
+        classes="notifications"
+        :max="1"
+      />
+    </clientOnly>
   </div>
 </template>
 
@@ -42,13 +49,24 @@ export default Vue.extend({
       this.transferedUsersValAsym = transferUsersAsym
     },
     async transfer(event: boolean) {
-      const transferenceST = event
-      await transfer.update({
-        transference: 'transfered',
-        idsSym: this.transferedUsersValSym,
-        idsAsym: this.transferedUsersValAsym
-      })
-      return transferenceST
+      try {
+        const transferenceST = event
+        await transfer.update({
+          transference: 'transfered',
+          idsSym: this.transferedUsersValSym,
+          idsAsym: this.transferedUsersValAsym
+        })
+        this.$notify({
+          type: 'success',
+          text: 'Sucesso ao incluir!'
+        })
+        return transferenceST
+      } catch (error) {
+        this.$notify({
+          type: 'error',
+          text: 'Erro ao incluir!'
+        })
+      }
     }
   }
 })

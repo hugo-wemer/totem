@@ -50,7 +50,6 @@ export default Vue.extend({
           text: 'Sucesso! Você será redirecionado.'
         })
         setTimeout(() => this.$router.push('/'), 2000)
-        /* this.$router.push('/') */
       } catch {
         this.$notify({
           type: 'error',

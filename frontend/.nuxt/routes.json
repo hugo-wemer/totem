@@ -7,6 +7,20 @@
     "_name": "_e7c7ce10"
   },
   {
+    "name": "Transfereds",
+    "path": "/Transfereds",
+    "component": "/home/hugo/Desktop/TCC/totem/frontend/pages/Transfereds.vue",
+    "chunkName": "pages/Transfereds",
+    "_name": "_4e110f90"
+  },
+  {
+    "name": "patient-id",
+    "path": "/patient/:id?",
+    "component": "/home/hugo/Desktop/TCC/totem/frontend/pages/patient/_id.vue",
+    "chunkName": "pages/patient/_id",
+    "_name": "_02aaf09f"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/home/hugo/Desktop/TCC/totem/frontend/pages/index.vue",
