@@ -1,6 +1,6 @@
 import { Module, Mutation, VuexModule, Action } from 'vuex-module-decorators'
 import { Patient } from '@/models'
-import { $axios } from '@/utils/nuxt-instance'
+import { $axios, $cookies } from '@/utils/nuxt-instance'
 
 interface Show {
   id: Patient['id']
@@ -36,8 +36,15 @@ export default class Patients extends VuexModule {
   }
 
   @Action
-  public async show({id}: Show) {
+  public async show({ id }: Show) {
     const patient = await $axios.$get(`/posts/${id}`)
     this.context.commit('SET_SINGLE', patient)
+  }
+
+  @Action
+  public async delete({ id }: Show) {
+    const token = $cookies.get('token')
+    await $axios.setToken(token, 'Bearer')
+    await $axios.$delete(`/posts/${id}`)
   }
 }

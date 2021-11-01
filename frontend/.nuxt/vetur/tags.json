@@ -14,14 +14,23 @@
   "Container": {
     "description": "Auto imported from components/bosons/Container.vue"
   },
+  "DeleteButton": {
+    "description": "Auto imported from components/molecules/DeleteButton.vue"
+  },
   "PatientImage": {
     "description": "Auto imported from components/molecules/PatientImage.vue"
   },
   "TransferButton": {
     "description": "Auto imported from components/molecules/TransferButton.vue"
   },
+  "UntransferButton": {
+    "description": "Auto imported from components/molecules/UntransferButton.vue"
+  },
   "AsymptomaticList": {
     "description": "Auto imported from components/organisms/AsymptomaticList.vue"
+  },
+  "ButtonSet": {
+    "description": "Auto imported from components/organisms/ButtonSet.vue"
   },
   "Footer": {
     "description": "Auto imported from components/organisms/Footer.vue"
