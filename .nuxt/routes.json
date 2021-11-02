@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Login",
+    "path": "/Login",
+    "component": "/home/hugo/Desktop/TCC/totem/pages/Login.vue",
+    "chunkName": "pages/Login",
+    "_name": "_6ea3f052"
+  },
+  {
+    "name": "Transfereds",
+    "path": "/Transfereds",
+    "component": "/home/hugo/Desktop/TCC/totem/pages/Transfereds.vue",
+    "chunkName": "pages/Transfereds",
+    "_name": "_7726f852"
+  },
+  {
+    "name": "patient-id",
+    "path": "/patient/:id?",
+    "component": "/home/hugo/Desktop/TCC/totem/pages/patient/_id.vue",
+    "chunkName": "pages/patient/_id",
+    "_name": "_23c00784"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/home/hugo/Desktop/TCC/totem/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_f0d77640"
+  }
+]
